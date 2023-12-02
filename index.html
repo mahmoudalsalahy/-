@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+    <head>
+      <center>
+        
+        
+       
+    
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/includes/css/bootstrap.min.css" type="text/css">
+    <script src="/static/includes/js/bootstrap.min.js"></script> 
+  
+</head>
+<body 
+style="background:#FFFFFF">
+<span class="header">
+    
+      
+
+     
+    
+  </center>
+  
+  </span>
+  {% block content %}
+
+   
+  {% endblock %}
+</body>
+<footer align="center">
+  Alwataniya School $$ &copy;
+  
+  <span id="year"></span> 
+   <script>
+  var d= new Date();
+  document.getElementById("year").innerHTML=d.getFullYear();
+ </script>
+  </footer>
+</html>
+
+
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' >
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+<center>
+<body>
+ <br>
+ <br>
+ <br>
+ <div class="login">
+  <center>
+  <br>
+  <img src="//images.squarespace-cdn.com/content/v1/656472b58b42113768f940bf/39bc01f9-5060-41fb-b2c6-e4c67278f3d8/%D8%B4%D8%B9%D8%A7%D8%B1+%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D8%A9+%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9+%D8%A7%D9%84%D8%A7%D9%94%D9%87%D9%84%D9%8A%D8%A9+Final+06-03-2023.png?format=1500w" 
+  alt="توقع نسبة الإصابة بسرطان الرئة" style="display:block" fetchpriority="high" loading="eager" decoding="async" data-loader="raw">
+  <br>
+  <br>
+  <br>
+  <br>
+  
+	<h1  class="header" style = "scale: 2;" >توقع نسبة الاصابة بسرطان الرئة</h1>
+  </center>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        
+        <p>
+        <div>
+        <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+              نسبة نلوث البيئة
+              
+                <span class="required" aria-hidden="true"></span>
+              
+            </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            
+            <br>
+          
+                
+                
+                <select
+                    style="scale: 1.8"
+                    name = "AirPollution"
+                    id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                    name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                    aria-required="true"
+                >
+                  
+                    <option value="1">1</option>
+                  
+                    <option value="2">2</option>
+                  
+                    <option value="3">3</option>
+                  
+                    <option value="4">4</option>
+                  
+                    <option value="5">5</option>
+                  
+                    <option value="6">6</option>
+                  
+                    <option value="7">7</option>
+                  
+                    <option value="8">8</option>
+                  
+                    <option value="9">9</option>
+                  
+                  <optgroup label=""></optgroup>
+                </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+              </div>        
+        <br>
+        <br>
+        <br>
+        <br>
+         
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            إحتساء الكحوليات
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "Alcoholuse"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            الخطر الجيني
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "GeneticRisk"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            النظام الغذائي الصحي
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "BalancedDiet"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            السمنة
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "Obesity"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            التدخين
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "Smoking"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            الاقلاع عن التدخين
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "PassiveSmoker"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            آلام الصدر
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "ChestPain"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <div>
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            سعال يصاحبه دم
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "CoughingofBlood"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        
+        <div class = "label10">
+          <label style= "font-size:30px;" class="title" for="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field">
+            اجهاد بعد الرياضة
+                
+                  <span class="required" aria-hidden="true"></span>
+                
+              </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              
+              <br>
+            
+                  
+                  
+                  <select
+                      style="scale: 1.8"
+                      name = "Fatigue"
+                      id="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      name="select-17ed253a-f4e6-4f13-bdaa-dffbf3b91a77-field"
+                      aria-required="true"
+                  >
+                    
+                      <option value="1">1</option>
+                    
+                      <option value="2">2</option>
+                    
+                      <option value="3">3</option>
+                    
+                      <option value="4">4</option>
+                    
+                      <option value="5">5</option>
+                    
+                      <option value="6">6</option>
+                    
+                      <option value="7">7</option>
+                    
+                      <option value="8">8</option>
+                    
+                      <option value="9">9</option>
+                    
+                    <optgroup label=""></optgroup>
+                  </select> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        </p>
+
+        
+        
+        
+        
+        <p>
+          
+        
+        <button  style="scale: 1.7;background-color: #02c913;font-size:20px;"  type="submit" class="btn" style="text-align: center;">تقدم</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         
+        </p>
+        <br>
+        <br>
+        <br>
+        <center> <div style="font-size:30px;color:#800000" class="hidden form-submission-text"> {{ prediction_text }} </div> </center>
+        
+
+        
+      
+    </form>
+   
+   <br>
+   <br>
+   
+
+ </div>
+
+
+</body>
+<br>
+<br>
+</center>
+
+<footer>
+<center>
+  <h1  class="header" style = "scale: 2;" > : هذا المشروع تحت إشراف كل من </h1>
+  <br>
+  <br>
+  <h2 class="header" style = "scale: 1.5;" > أ.عمر محمد حسني الصلاحي </h2>   
+</center>
+</footer>
+
+</html>

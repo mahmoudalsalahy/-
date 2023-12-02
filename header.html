@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <head>
+        <title>Diabetes Prediction</title>
+        
+       
+    
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/includes/css/bootstrap.min.css" type="text/css">
+    <script src="/static/includes/js/bootstrap.min.js"></script> 
+
+</head>
+<body style="background: #CCC;">
+<span class="header">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+      <div class="container">
+      <a href="#" class="navbar-brand"><h3>Diabetes Prediction System</h3></a>
+
+     
+    </div>
+
+  </nav>
+  </span>
+  {% block content %}
+
+   
+  {% endblock %}
+</body>
+<footer align="center">
+  Copyright &copy; <span id="year"></span> 
+   <script>
+  var d= new Date();
+  document.getElementById("year").innerHTML=d.getFullYear();
+ </script>
+  </footer>
+</html>
